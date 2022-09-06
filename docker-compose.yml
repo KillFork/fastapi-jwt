@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  web:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0
+    volumes:
+      - .:/app
+    ports:
+      - 8008:8000
+    environment:
+      - secret=66664b1dae939a32f3483cd30b76a1daa8cfc93400d0d3df
+      - algorithm=HS256
